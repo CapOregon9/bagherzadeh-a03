@@ -9,6 +9,6 @@ public class Solution24 {
         char[] firstString = anagram.setFirstString();
         char[] secondString = anagram.setSecondString();
         //call anagram checker and print result
-        anagram.printResult(firstString, secondString, anagram.isAnagram(firstString, secondString));
+        anagram.printResult(anagram.isAnagram(firstString, secondString));
     }
 }
