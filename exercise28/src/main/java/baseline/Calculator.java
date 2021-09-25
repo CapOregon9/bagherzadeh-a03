@@ -18,14 +18,27 @@ public class Calculator {
 
     public void setNumbers() {
         //Takes input of numbers in a loop
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println("Enter a number: ");
+            try {
+                numbers[i] = Integer.parseInt(in.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid Input. Input must be an integer.");
+            }
+        }
     }
 
     public String calculateTotal() {
         //calculates total using the integer array as its values and returns as a string
-        return "";
+        int total = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            total += numbers[i];
+        }
+        return String.format("The total is %d", total);
     }
 
     public void printTotal() {
         //Print results from calculate total
+        System.out.println(calculateTotal());
     }
 }
