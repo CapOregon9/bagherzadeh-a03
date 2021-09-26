@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solutions
+ *  Copyright 2021 Alexander Bagherzadeh
+ */
+
 package baseline;
 
 import java.util.Scanner;
@@ -5,7 +10,7 @@ import java.util.Scanner;
 public class Calculator {
     private static final Scanner in = new Scanner(System.in);
     //Store input in integer array
-    int[] numbers = new int[5];
+    private int[] numbers = new int[5];
 
     public Calculator() {
         //constructor used for main method

@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solutions
+ *  Copyright 2021 Alexander Bagherzadeh
+ */
+
 package baseline;
 
 import java.util.Scanner;
@@ -5,11 +10,11 @@ import java.util.Scanner;
 public class Validation {
     private static final Scanner in = new Scanner(System.in);
     //store inputs as instance variables
-    String firstName;
-    String lastName;
-    String zipCode;
-    String employeeID;
-    String validationResult;
+    private String firstName;
+    private String lastName;
+    private String zipCode;
+    private String employeeID;
+    private String validationResult;
 
     public Validation() {
         //general constructor to use in main method
