@@ -13,11 +13,28 @@ public class MultiplicationTableGenerator {
         this.multiplicationTable = multiplicationTable;
     }
 
+    public int[][] getMultiplicationTable() {
+        //used for junit testing
+        return multiplicationTable;
+    }
+
     public void calculateMultiplicationTable() {
         //generates multiplication table and stores it in instance variable
+        for (int i = 1; i <= multiplicationTable.length; i++) {
+            for (int j = 1; j <= multiplicationTable.length; j++) {
+                multiplicationTable[i - 1][j - 1] = i * j;
+            }
+        }
     }
 
     public void printMultiplicationTable() {
         //prints multiplication table adding appropriate tabs
+        for (int[] ints : multiplicationTable) {
+            StringBuilder tableRow = new StringBuilder(50);
+            for (int j = 0; j < multiplicationTable.length; j++) {
+                tableRow.append(String.format("%d\t", ints[j]));
+            }
+            System.out.println(tableRow);
+        }
     }
 }
