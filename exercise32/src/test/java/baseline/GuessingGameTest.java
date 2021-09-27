@@ -24,4 +24,28 @@ class GuessingGameTest {
 
         assertEquals(expectedValue, actualValue);
     }
+
+    @Test
+    void setRandomNumberToGuess2() {
+        //used to check java random functionality;
+        GuessingGame guessingGame2 = new GuessingGame();
+        Random random = new Random(1);
+
+        int expectedValue = guessingGame2.setRandomNumberToGuess(2);
+        int actualValue = random.nextInt(100);
+
+        assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    void setRandomNumberToGuess3() {
+        //used to check java random functionality;
+        GuessingGame guessingGame3 = new GuessingGame();
+        Random random = new Random(1);
+
+        int expectedValue = guessingGame3.setRandomNumberToGuess(1);
+        int actualValue = random.nextInt(10);
+
+        assertEquals(expectedValue, actualValue);
+    }
 }
