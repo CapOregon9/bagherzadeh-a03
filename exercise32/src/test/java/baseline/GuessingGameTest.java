@@ -7,6 +7,8 @@ package baseline;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class GuessingGameTest {
@@ -15,9 +17,10 @@ class GuessingGameTest {
     void setRandomNumberToGuess() {
         //used to check java random functionality;
         GuessingGame guessingGame = new GuessingGame();
+        Random random = new Random(1);
 
         int expectedValue = guessingGame.setRandomNumberToGuess(3);
-        int actualValue = 0;
+        int actualValue = random.nextInt(1000);
 
         assertEquals(expectedValue, actualValue);
     }
