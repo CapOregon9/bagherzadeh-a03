@@ -1,7 +1,6 @@
 package baseline;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Scanner;
 
 public class EmployeeList {
@@ -38,8 +37,8 @@ public class EmployeeList {
         }
     }
 
-    public ArrayList<String> getEmployeeList() {
+    public Object[] getEmployeeList() {
         //used for junit testing
-        return this.employees;
+        return this.employees.toArray();
     }
 }

@@ -2,33 +2,40 @@ package baseline;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class ContenderList {
-    //initialize random object
-    private final Random random = new Random(1);
+    private static final Scanner in = new Scanner(System.in);
+    //initialize random object and use seed to be able to test with test case
+    private final Random random = new Random(23);
     //create an array list to store the contenders
     private final ArrayList<String> contenders = new ArrayList<>();
 
     public String getUserContender() {
-        //gets contender from user and verifies if the input is not blank
-        return "";
+        //gets contender from user
+        System.out.println("Enter a name:");
+        return in.nextLine();
     }
 
-    public void addContender() {
-        //adds contender to the contenders array list
+    public void addContender(String contender) {
+        //adds contender to the contenders array list if input is not blank
+        if (!contender.isBlank()) {
+            contenders.add(contender);
+        }
     }
 
     public int getRandomNumber(int randomBounds) {
         //gives a random number based on the given bounds
-        return 0;
+        return random.nextInt(randomBounds);
     }
 
     public void printWinner() {
         //prints the winning contender
+        System.out.printf("The winner is... %s", contenders.get(getRandomNumber(contenders.size())));
     }
 
-    public ArrayList<String> getContenders() {
+    public Object[] getContendersList() {
         //used in junit testing to verify the array list
-        return this.contenders;
+        return this.contenders.toArray();
     }
 }

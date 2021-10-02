@@ -18,6 +18,6 @@ class EmployeeListTest {
         employees.add("jeremy Goodwin");
         employeeList.removeEmployeeFromArrayList("Chris Jones");
 
-        assertArrayEquals(employees.toArray(), employeeList.getEmployeeList().toArray());
+        assertArrayEquals(employees.toArray(), employeeList.getEmployeeList());
     }
 }
