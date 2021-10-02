@@ -25,4 +25,17 @@ class EmployeeListTest {
 
         assertArrayEquals(employees.toArray(), employeeList.getEmployeeList());
     }
+
+    @Test
+    void removeJohnSmithEmployeeFromArrayList() {
+        EmployeeList employeeList = new EmployeeList();
+        ArrayList<String> employees = new ArrayList<>();
+        employees.add("Jackie Jackson");
+        employees.add("Chris Jones");
+        employees.add("Amanda Cullen");
+        employees.add("jeremy Goodwin");
+        employeeList.removeEmployeeFromArrayList("John Smith");
+
+        assertArrayEquals(employees.toArray(), employeeList.getEmployeeList());
+    }
 }
