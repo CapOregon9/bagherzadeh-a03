@@ -12,9 +12,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class ValidationCheckerTest {
     //tests try catch code due to not being able to test input.
     @Test
-    void setYearsToDoubleInvestment() {
+    void setYearsToDoubleInvestment1() {
         ValidationChecker vc = new ValidationChecker(4);
         int expectedValidation = 18;
+        int actualValidation = vc.getYearsToDoubleInvestment();
+
+        assertEquals(expectedValidation, actualValidation);
+    }
+
+    @Test
+    void setYearsToDoubleInvestment2() {
+        ValidationChecker vc = new ValidationChecker(6);
+        int expectedValidation = 12;
         int actualValidation = vc.getYearsToDoubleInvestment();
 
         assertEquals(expectedValidation, actualValidation);
