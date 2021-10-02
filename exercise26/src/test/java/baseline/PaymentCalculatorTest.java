@@ -12,11 +12,21 @@ import static org.junit.jupiter.api.Assertions.*;
 class PaymentCalculatorTest {
 
     @Test
-    void calculateMonthsUntilPaidOff() {
+    void calculateMonthsUntilPaidOff1() {
         PaymentCalculator pc = new PaymentCalculator(5000, 12, 100);
 
         int actualResult = pc.calculateMonthsUntilPaidOff();
         int expectedResult = 70;
+
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    void calculateMonthsUntilPaidOff2() {
+        PaymentCalculator pc = new PaymentCalculator(10000, 12, 210);
+
+        int actualResult = pc.calculateMonthsUntilPaidOff();
+        int expectedResult = 65;
 
         assertEquals(expectedResult, actualResult);
     }
