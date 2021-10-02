@@ -5,14 +5,20 @@
 
 package baseline;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ValidationTest {
-    Validation vd = new Validation("J", "", "ABCDE", "A12-1234");
+    Validation vd;
     String expectedValue;
     String actualValue;
+
+    @BeforeEach
+    void createObjects() {
+        vd = new Validation("J", "", "ABCDE", "A12-1234");
+    }
     @Test
     void validateFirstName() {
         actualValue = vd.validateFirstName();
