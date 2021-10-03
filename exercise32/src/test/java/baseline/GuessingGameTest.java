@@ -5,6 +5,7 @@
 
 package baseline;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -12,13 +13,17 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GuessingGameTest {
+    GuessingGame guessingGame;
+    Random random;
+    @BeforeEach
+    void createObjects() {
+        guessingGame = new GuessingGame(true);
+        random = new Random(1);
+    }
 
     @Test
     void setRandomNumberToGuess() {
         //used to check java random functionality;
-        GuessingGame guessingGame = new GuessingGame();
-        Random random = new Random(1);
-
         int expectedValue = guessingGame.setRandomNumberToGuess(3);
         int actualValue = random.nextInt(1000);
 
@@ -28,10 +33,7 @@ class GuessingGameTest {
     @Test
     void setRandomNumberToGuess2() {
         //used to check java random functionality;
-        GuessingGame guessingGame2 = new GuessingGame();
-        Random random = new Random(1);
-
-        int expectedValue = guessingGame2.setRandomNumberToGuess(2);
+        int expectedValue = guessingGame.setRandomNumberToGuess(2);
         int actualValue = random.nextInt(100);
 
         assertEquals(expectedValue, actualValue);
@@ -40,10 +42,7 @@ class GuessingGameTest {
     @Test
     void setRandomNumberToGuess3() {
         //used to check java random functionality;
-        GuessingGame guessingGame3 = new GuessingGame();
-        Random random = new Random(1);
-
-        int expectedValue = guessingGame3.setRandomNumberToGuess(1);
+        int expectedValue = guessingGame.setRandomNumberToGuess(1);
         int actualValue = random.nextInt(10);
 
         assertEquals(expectedValue, actualValue);

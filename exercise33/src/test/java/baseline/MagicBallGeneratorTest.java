@@ -19,7 +19,7 @@ class MagicBallGeneratorTest {
     @BeforeEach
     void createObjects() {
         random = new Random(1);
-        magicBallGenerator = new MagicBallGenerator();
+        magicBallGenerator = new MagicBallGenerator(true);
     }
 
     @Test
@@ -34,7 +34,6 @@ class MagicBallGeneratorTest {
     @Test
     void getRandomNumber2() {
         //only works if random is the same seed as random in MagicBallGenerator class
-        random.nextInt(4);
         int expectedValue = random.nextInt(4);
         int actualValue = magicBallGenerator.getRandomNumber();
 

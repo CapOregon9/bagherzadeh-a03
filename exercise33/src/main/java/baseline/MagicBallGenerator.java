@@ -12,7 +12,17 @@ public class MagicBallGenerator {
     private static final Scanner in = new Scanner(System.in);
     //create a constant variable storing the strings and initialize random to be used later
     private final String[] magicBallOutput = {"Yes", "No", "Maybe", "Ask again later."};
-    private static final Random random = new Random(1);
+    private Random random;
+
+    public MagicBallGenerator() {
+        random = new Random();
+    }
+
+    public MagicBallGenerator(boolean state) {
+        if (state) {
+            random = new Random(1);
+        }
+    }
 
     public String setUserQuestion() {
         //prompts user for question
